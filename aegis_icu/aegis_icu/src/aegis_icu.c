@@ -1,14 +1,3 @@
-/*
- * ICU Alarm System (simple version)
- * QNX Neutrino 7.x / 8.0  -  Raspberry Pi 4 Model B
- *
- * Flow: Sensor -> Duplicate check (4 s) -> POSIX MQ (P1/P2/P3)
- *       -> Aging (P2 > 6 s becomes P1) -> Dispatcher (SCHED_FIFO 25)
- *       -> LEDs + buzzer + console
- *
- * Run as root. If mq_open fails, run:  mqueue &
- */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
